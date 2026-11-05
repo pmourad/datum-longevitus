@@ -69,7 +69,7 @@ a{color:#EEF2F1}a:hover{color:#FF6A2B}
 .pa-p1 .callout span{display:block;margin-top:6px;font-size:11px;line-height:1.4;color:#DCE4E4}
 .pa-p1 .table{position:relative;z-index:4}
 .pa-p1 .row{display:grid;border-top:1px solid var(--line)}
-.pa-p1 .row-a{grid-template-columns:minmax(0,1fr) minmax(0,1.75fr)}
+.pa-p1 .row-a{grid-template-columns:minmax(0,1.75fr) minmax(0,1fr)}
 .pa-p1 .row-a > div{padding:24px 0 28px}
 .pa-p1 .row-a > div + div{border-left:1px solid var(--line);padding-left:32px;text-align:right}
 .pa-p1 .eyebrow{font-size:12px;color:var(--mute);margin:0 0 16px}
@@ -369,6 +369,16 @@ html{scroll-behavior:smooth}
 .pa-p1 .links.open a{opacity:1;transform:none}
 .pa-p1 .links.open a:nth-child(2){transition-delay:.05s}.pa-p1 .links.open a:nth-child(3){transition-delay:.1s}.pa-p1 .links.open a:nth-child(4){transition-delay:.15s}.pa-p1 .links.open a:nth-child(5){transition-delay:.2s}.pa-p1 .links.open a:nth-child(6){transition-delay:.25s}.pa-p1 .links.open a:nth-child(7){transition-delay:.3s}.pa-p1 .links.open a:nth-child(8){transition-delay:.35s}
 .pa-p1 .links .btn{width:auto;margin-top:24px;min-height:56px;padding:0 28px;font-size:15px;letter-spacing:.08em}
+}
+/* DESKTOP HEADER — big centred logo on its own row, centred menu below; logo compacts once scrolled */
+@media (min-width: 1101px){
+.pa-p1 .nav-in{flex-direction:column;justify-content:flex-start;align-items:center;gap:32px;padding-top:22px;padding-bottom:14px;transition:padding .4s cubic-bezier(.2,.8,.2,1),gap .4s cubic-bezier(.2,.8,.2,1)}
+.pa-p1 .logo-img{height:142px;transition:height .4s cubic-bezier(.2,.8,.2,1)}
+.pa-p1 .links{justify-content:center}
+.pa-p1 .nav[data-scrolled] .nav-in{gap:10px;padding-top:12px;padding-bottom:10px}
+.pa-p1 .nav[data-scrolled] .logo-img{height:52px}
+.pa-p1 [id]{scroll-margin-top:136px}
+.pa-p1 .hero{padding-top:72px}
 }
 /* MOBILE ONLY (phones) — desktop untouched */
 @media (max-width: 700px){
@@ -775,6 +785,15 @@ html{scroll-behavior:smooth}
 .pa-p2 .links.open a:nth-child(2){transition-delay:.05s}.pa-p2 .links.open a:nth-child(3){transition-delay:.1s}.pa-p2 .links.open a:nth-child(4){transition-delay:.15s}.pa-p2 .links.open a:nth-child(5){transition-delay:.2s}.pa-p2 .links.open a:nth-child(6){transition-delay:.25s}.pa-p2 .links.open a:nth-child(7){transition-delay:.3s}.pa-p2 .links.open a:nth-child(8){transition-delay:.35s}
 .pa-p2 .links .btn{width:auto;margin-top:24px;min-height:56px;padding:0 28px;font-size:15px;letter-spacing:.08em}
 }
+/* DESKTOP HEADER — big centred logo on its own row, centred menu below; logo compacts once scrolled */
+@media (min-width: 1101px){
+.pa-p2 .nav-in{flex-direction:column;justify-content:flex-start;align-items:center;gap:32px;padding-top:22px;padding-bottom:14px;transition:padding .4s cubic-bezier(.2,.8,.2,1),gap .4s cubic-bezier(.2,.8,.2,1)}
+.pa-p2 .logo-img{height:142px;transition:height .4s cubic-bezier(.2,.8,.2,1)}
+.pa-p2 .links{justify-content:center}
+.pa-p2 .nav[data-scrolled] .nav-in{gap:10px;padding-top:12px;padding-bottom:10px}
+.pa-p2 .nav[data-scrolled] .logo-img{height:52px}
+.pa-p2 [id]{scroll-margin-top:136px}
+}
 /* MOBILE ONLY (phones) — desktop untouched */
 @media (max-width: 700px){
 .pa-p2 .name-def{width:auto !important;max-width:100%}
@@ -804,16 +823,7 @@ html{scroll-behavior:smooth}
 <a class="logo" href="#top" aria-label="Datum Longevitus home" data-navclick>
 <span class="logo-img" role="img" aria-label="Datum Longevitus"><img class="logo-mk" src="assets/logo-mark.webp" alt=""><img class="logo-wm" src="assets/logo-wordmark-white.svg" alt=""></span>
 </a>
-<nav class="links" id="pa-menu" aria-label="Main" data-navclick>
-<a href="#top">Home</a>
-<a href="#stories">Proof</a>
-<a href="#about">Between the dots</a>
-<a href="#protect">What we do</a>
-<a href="#name">The name</a>
-<a href="#testimonials">Testimonials</a>
-<a href="#contact">Contact</a>
-<a class="btn" href="#contact">Book a call</a>
-</nav>
+<nav class="links" id="pa-menu" aria-label="Main" data-navclick><a href="#top">Home</a><a href="#stories">Proof</a><a href="#about">Between the dots</a><a href="#protect">DATA SHARING</a><a href="#name">The name</a><a href="#testimonials">ADVOCATES</a><a class="btn" href="#contact">CONTACT</a></nav>
 <button class="menu-btn" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="pa-menu" data-toggle><span></span><span></span><span></span></button>
 </div>
 </header>
@@ -826,24 +836,24 @@ html{scroll-behavior:smooth}
 
 
 
-<div class="callout c1" style="left:18%;top:250px"><b><i></i>Protect</b><span class="mono">Compliance for a single charity</span></div>
+<div class="callout c1" style="left:18%;top:250px"><b><i></i>Protect</b><span class="mono">Compliance with a cause</span></div>
 <div class="callout c2" style="left:68%;top:220px"><b><i></i>Unlock</b><span class="mono">Secure environments that let whole consortia work with data</span></div>
 </div>
 <div class="wrap table">
 <div class="row row-a">
 <div>
 <p class="eyebrow mono">Ethical data intermediary &amp; compliance consultancy</p>
-<p class="big acc"><span class="l"><span><span class="glitch">Data saves</span></span></span><span class="l"><span style="animation-delay:.12s">lives.</span></span></p>
+<h1 class="big"><span class="l"><span>Compliance</span></span><span class="l"><span style="animation-delay:.12s">unlocks data.</span></span></h1>
 </div>
 <div>
 <p class="eyebrow mono">Datum Longevitus</p>
-<h1 class="big"><span class="l"><span style="animation-delay:.3s">Compliance</span></span><span class="l"><span style="animation-delay:.42s">unlocks data.</span></span></h1>
+<p class="big acc"><span class="l"><span style="animation-delay:.3s"><span class="glitch">Data saves</span></span></span><span class="l"><span style="animation-delay:.42s">lives.</span></span></p>
 </div>
 </div>
 <div class="row row-b">
 <div>
 
-<p style="width: 649px">Datum Longevitus is an ethical data intermediary. We help charities, researchers and public bodies share sensitive data lawfully and safely, because data that could save lives is too often left sitting unused.</p>
+<p style="width: 649px">Datum Longevitus exists to use compliance to help values-led organisations and those special projects that benefit society, to accelerate. We want to help the special people in the charities and public bodies (big or small), and those who manage the unused datasets who know if they were used they could change the world for the better.</p>
 </div>
 <div>
 <div class="ctas"><a class="btn" href="#contact" data-navclick>BOOK A CONSULTATION</a><a class="btn ghost" href="#proof">SEE THE EVIDENCE</a></div>
@@ -898,7 +908,7 @@ html{scroll-behavior:smooth}
 <span class="chap-num" aria-hidden="true">03</span>
 <div class="wrap chap-in">
 <div class="chap-top mono"><div class="chap-kick"><i></i>Proof 03 / 03</div></div>
-<h3>Can violence <span class="hl">reduce violence?</span></h3>
+<h3>Can DATA&nbsp;<span class="hl">reduce violence?</span></h3>
 <div class="chap-row">
 <div class="chap-story">
 <p>It sounds absurd. A national study, Boxing to End Youth Violence, is finding out whether boxing can keep young people in low-income areas away from violence. It depended on every partner trusting that the young people taking part would be protected. Datum brought them all to consensus. If the answer is yes, it changes how young people are kept safe in every town that needs it. Compliance reduces violence.<br></p>
@@ -922,12 +932,12 @@ html{scroll-behavior:smooth}
 
 <div class="pa pa-a2 pa-p2" style="--acc: #FF6A2B">
 
-<section class="method" id="about" style="height: 1033px">
+<section class="method" id="about" style="min-height: 1033px">
 <div class="mslides" aria-hidden="true"><img class="ms" src="assets/slide-01.jpg" alt=""><img class="ms" src="assets/slide-02.jpg" alt=""><img class="ms" src="assets/slide-03.jpg" alt=""><img class="ms" src="assets/slide-04.jpg" alt=""><img class="ms" src="assets/slide-05.jpg" alt=""><img class="ms" src="assets/slide-06.jpg" alt=""><div class="ms-shade"></div><div class="ms-bars"><i><b></b></i><i><b></b></i><i><b></b></i><i><b></b></i><i><b></b></i><i><b></b></i></div></div>
 <div class="wrap" style="position: relative; z-index: 2; opacity: 1">
 <div class="sec-head reveal" style="border:0;padding:0">
 <h2 class="title">We are the<br><span class="acc">LINE between<br></span><span style="font-size: clamp(40px, 6vw, 96px); letter-spacing: -0.045em; text-wrap-mode: initial">THe DOTS.</span></h2>
-<p class="lead" style="width: 787px">Protect, share and unlock: from compliance for a single charity to the secure environments that let whole consortia work with data. Most of the data world wants to be a dot: the platform, the technology, the company that holds the data. <strong class="acc" style="font-weight: 700">We would rather be the line that connects the dots.<br><br></strong>Data is shared constantly. Every video call, every email, every record that passes between a charity and a local authority travels through infrastructure most people never think about. What makes that sharing trustworthy is governance: knowing where the data is coming from, where it is going, who is using it, why they are using it, and whether they are allowed to. When those questions cannot be answered, trust is lost and the data stays locked away. Answering them properly is what allows us to be put to good use.</p>
+<p class="lead" style="width: 787px"><span>Protect, share and unlock: from compliance for a single charity to the secure environments that let whole consortia work with data. Most of the data world wants to be a dot: the platform, the technology, the company that holds the data.</span> <span class="acc"><b>We would rather be the line that connects the dots.</b><br><br><font color="#dce4e4">We design and manage the line using a combination of compliance and the worlds most advanced technologies: Signal pushing; Memory infrastructures; Secure 5 Safes Environments; Federated Research &amp; Learning Environments; Human1; Fractal; Data Sapians; Prolinx; MetaData Blockchains... and good old fashioned AWS, Microsoft and Google compliance.</font><br><br><br></span><span>Data is shared constantly. Every video call, every email, every record that passes between a charity and a local authority travels through infrastructure most people never think about. What makes that sharing trustworthy is governance: knowing where the data is coming from, where it is going, who is using it, why they are using it, and whether they are allowed to. When those questions cannot be answered, trust is lost and the data stays locked away. Answering them properly is what allows us to be put to good use.</span></p>
 </div>
 
 </div>
@@ -1172,7 +1182,7 @@ if (id !== 'top' && !el) return;
 e.preventDefault();
 let reduce = false;
 try { reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches; } catch (err) {}
-const off = (id === 'stories') ? 0 : 76;
+const off = (id === 'stories') ? 0 : ((window.innerWidth || 0) > 1100 ? 132 : 76);
 const y = el ? el.getBoundingClientRect().top + (window.scrollY || 0) - off : 0;
 window.scrollTo({ top: Math.max(0, y), behavior: reduce ? 'auto' : 'smooth' });
 }
@@ -1807,23 +1817,6 @@ ctx.globalAlpha = 0.85; ctx.strokeStyle = 'rgba(255,255,255,0.85)';
 ctx.beginPath(); ctx.moveTo(o.x, o.y - 5); ctx.lineTo(o.x, ly); ctx.lineTo(lx, ly); ctx.stroke();
 ctx.fillStyle = '#fff'; ctx.fillRect(lx - 3, ly - 3, 6, 6); ctx.fillRect(o.x - 2, ly - 2, 4, 4);
 });
-// reticle at the cursor
-ctx.globalAlpha = this.hover ? 0.9 : 0.45;
-ctx.strokeStyle = '#ffffff'; ctx.lineWidth = 1;
-const R = 18;
-ctx.beginPath();
-ctx.moveTo(px - R, py - R + 6); ctx.lineTo(px - R, py - R); ctx.lineTo(px - R + 6, py - R);
-ctx.moveTo(px + R - 6, py - R); ctx.lineTo(px + R, py - R); ctx.lineTo(px + R, py - R + 6);
-ctx.moveTo(px - R, py + R - 6); ctx.lineTo(px - R, py + R); ctx.lineTo(px - R + 6, py + R);
-ctx.moveTo(px + R - 6, py + R); ctx.lineTo(px + R, py + R); ctx.lineTo(px + R, py + R - 6);
-ctx.stroke();
-ctx.fillStyle = '#FF6A2B'; ctx.fillRect(px - 1.5, py - 1.5, 3, 3);
-ctx.fillStyle = 'rgba(230,238,238,1)';
-ctx.font = '500 10px "IBM Plex Mono", ui-monospace, monospace';
-const fx = (n) => (n < 0 ? '-' : '+') + Math.abs(n).toFixed(2).padStart(6, '0');
-ctx.fillText('X ' + fx(gx) + '   Z ' + fx(gz), px + R + 8, py - 6);
-ctx.globalAlpha *= 0.7;
-ctx.fillText('NODE · ' + (Math.sin(t * 3) > 0 ? 'PROTECTED' : 'LAWFUL'), px + R + 8, py + 8);
 // scanline sweep
 const sy = ((t * 0.12) % 1.2) * H - 0.1 * H;
 const sg = ctx.createLinearGradient(0, sy - 40, 0, sy);
@@ -1947,7 +1940,7 @@ if (id !== 'top' && !el) return;
 e.preventDefault();
 let reduce = false;
 try { reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches; } catch (err) {}
-const off = (id === 'stories') ? 0 : 76;
+const off = (id === 'stories') ? 0 : ((window.innerWidth || 0) > 1100 ? 132 : 76);
 const y = el ? el.getBoundingClientRect().top + (window.scrollY || 0) - off : 0;
 window.scrollTo({ top: Math.max(0, y), behavior: reduce ? 'auto' : 'smooth' });
 }
@@ -2589,23 +2582,6 @@ ctx.globalAlpha = 0.85; ctx.strokeStyle = 'rgba(255,255,255,0.85)';
 ctx.beginPath(); ctx.moveTo(o.x, o.y - 5); ctx.lineTo(o.x, ly); ctx.lineTo(lx, ly); ctx.stroke();
 ctx.fillStyle = '#fff'; ctx.fillRect(lx - 3, ly - 3, 6, 6); ctx.fillRect(o.x - 2, ly - 2, 4, 4);
 });
-// reticle at the cursor
-ctx.globalAlpha = this.hover ? 0.9 : 0.45;
-ctx.strokeStyle = '#ffffff'; ctx.lineWidth = 1;
-const R = 18;
-ctx.beginPath();
-ctx.moveTo(px - R, py - R + 6); ctx.lineTo(px - R, py - R); ctx.lineTo(px - R + 6, py - R);
-ctx.moveTo(px + R - 6, py - R); ctx.lineTo(px + R, py - R); ctx.lineTo(px + R, py - R + 6);
-ctx.moveTo(px - R, py + R - 6); ctx.lineTo(px - R, py + R); ctx.lineTo(px - R + 6, py + R);
-ctx.moveTo(px + R - 6, py + R); ctx.lineTo(px + R, py + R); ctx.lineTo(px + R, py + R - 6);
-ctx.stroke();
-ctx.fillStyle = '#FF6A2B'; ctx.fillRect(px - 1.5, py - 1.5, 3, 3);
-ctx.fillStyle = 'rgba(230,238,238,1)';
-ctx.font = '500 10px "IBM Plex Mono", ui-monospace, monospace';
-const fx = (n) => (n < 0 ? '-' : '+') + Math.abs(n).toFixed(2).padStart(6, '0');
-ctx.fillText('X ' + fx(gx) + '   Z ' + fx(gz), px + R + 8, py - 6);
-ctx.globalAlpha *= 0.7;
-ctx.fillText('NODE · ' + (Math.sin(t * 3) > 0 ? 'PROTECTED' : 'LAWFUL'), px + R + 8, py + 8);
 // scanline sweep
 const sy = ((t * 0.12) % 1.2) * H - 0.1 * H;
 const sg = ctx.createLinearGradient(0, sy - 40, 0, sy);
